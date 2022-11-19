@@ -1,0 +1,8 @@
+div.face {
+  display: inline-block;
+  padding: 10px;
+}
+
+img.face {
+  width: 150px;
+}

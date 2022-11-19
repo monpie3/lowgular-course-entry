@@ -1,5 +1,5 @@
-<div style="display:inline-block; padding:10px" *ngFor="let employee of data$ | async">
-  <img style="width:150px" [src]="employee.image" alt="">
+<div class="face" *ngFor="let employee of data$ | async">
+  <img class="face" [src]="employee.image" alt="">
   <div> {{employee.name }}</div>
 </div>
 

@@ -6,6 +6,7 @@ import {EmployeeModel} from "../../model/employee.model";
 @Component({
   selector: 'app-employees-faces',
   templateUrl: './employees-faces.component.html',
+  styleUrls: ['./employees-faces.component.css'],
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.OnPush
 })

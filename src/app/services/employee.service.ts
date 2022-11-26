@@ -16,4 +16,8 @@ export class EmployeeService {
   create(employee:CreateEmployeeModel):Observable<void> {
     return this._httpClient.post('https://jsonplaceholder.typicode.com/posts', employee).pipe(map(_ => void 0));
   }
+
+  delete(id:string):Observable<void> {
+    return this._httpClient.delete('https://jsonplaceholder.typicode.com/posts/' + id).pipe(map(_ => void 0));
+  }
 }

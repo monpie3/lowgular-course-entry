@@ -6,6 +6,7 @@ import { PersonModel } from '../model/person.model';
 import { ApiResponse } from './api.response';
 import { EmployeeResponse } from './employee.response';
 import { CreateEmployeeModel } from '../model/create-employee.model';
+import { EmployeeModel } from '../model/employee.model';
 
 @Injectable()
 export class EmployeeService {
@@ -39,5 +40,16 @@ export class EmployeeService {
     return this._httpClient.delete('https://dummy.restapiexample.com/api/v1/delete/' + id).pipe(map(_ => void 0));
   }
 
+  getOne(id: string): Observable<EmployeeModel> {
+    return this._httpClient.get<ApiResponse<EmployeeResponse>>('https://dummy.restapiexample.com/api/v1/employee/' + id).pipe(
+      map((response): EmployeeModel => ({
+        id: response.data.id,
+        name:  response.data.employee_name,
+        email: "",
+        image: response.data.employee_image,
+      }))
+    );
+
+  }
 }
 
